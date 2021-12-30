@@ -229,7 +229,6 @@ public class CodeGenerator {
         varType t = varType.Int;
         switch (symbolTable.getMethodReturnType(className, methodName)) {
             case Int:
-                t = varType.Int;
                 break;
             case Bool:
                 t = varType.Bool;

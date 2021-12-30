@@ -9,25 +9,25 @@ public class Memory {
     private final ArrayList<_3AddressCode> codeBlock;
     private int lastTempIndex;
     private int lastDataAddress;
-    private final int startTempMemoryAddress = 500;
-    private final int startDataMemoryAddress = 200;
-    private final int dataSize = 4;
-    private final int tempSize = 4;
+    private static final int START_TEMP_MEMORY_ADDRESS = 500;
+    private static final int START_DATA_MEMORY_ADDRESS = 200;
+    private static final int DATA_SIZE = 4;
+    private static final int TEMP_SIZE = 4;
 
     public Memory() {
         codeBlock = new ArrayList<>();
-        lastTempIndex = startTempMemoryAddress;
-        lastDataAddress = startDataMemoryAddress;
+        lastTempIndex = START_TEMP_MEMORY_ADDRESS;
+        lastDataAddress = START_DATA_MEMORY_ADDRESS;
     }
 
     public int getTemp() {
-        lastTempIndex += tempSize;
-        return lastTempIndex - tempSize;
+        lastTempIndex += TEMP_SIZE;
+        return lastTempIndex - TEMP_SIZE;
     }
 
     public int getDateAddress() {
-        lastDataAddress += dataSize;
-        return lastDataAddress - dataSize;
+        lastDataAddress += DATA_SIZE;
+        return lastDataAddress - DATA_SIZE;
     }
 
     public int saveMemory() {

@@ -1,11 +1,11 @@
 package semantic.symbol;
 
 
-import codeGenerator.Address;
-import codeGenerator.Memory;
-import codeGenerator.TypeAddress;
-import codeGenerator.VarType;
-import errorHandler.ErrorHandler;
+import generator.Address;
+import generator.Memory;
+import generator.TypeAddress;
+import generator.VarType;
+import error.ErrorHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -140,7 +140,7 @@ public class SymbolTable {
         public int codeAddress;
         public Map<String, Symbol> parameters;
         public Map<String, Symbol> localVariable;
-        private ArrayList<String> orderdParameters;
+        private final ArrayList<String> orderedParameters;
         public int callerAddress;
         public int returnAddress;
         public SymbolType returnType;
@@ -149,7 +149,7 @@ public class SymbolTable {
         public Method(int codeAddress, SymbolType returnType) {
             this.codeAddress = codeAddress;
             this.returnType = returnType;
-            this.orderdParameters = new ArrayList<>();
+            this.orderedParameters = new ArrayList<>();
             this.returnAddress = mem.getDateAddress();
             this.callerAddress = mem.getDateAddress();
             this.parameters = new HashMap<>();
@@ -166,7 +166,7 @@ public class SymbolTable {
 
         public void addParameter(String parameterName) {
             parameters.put(parameterName, new Symbol(lastType, mem.getDateAddress()));
-            orderdParameters.add(parameterName);
+            orderedParameters.add(parameterName);
         }
 
         private void reset() {
@@ -174,7 +174,7 @@ public class SymbolTable {
         }
 
         private Symbol getNextParameter() {
-            return parameters.get(orderdParameters.get(index++));
+            return parameters.get(orderedParameters.get(index++));
         }
     }
 

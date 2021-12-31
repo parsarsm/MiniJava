@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by mohammad hosein on 6/27/2015.
  */
 public class Memory {
-    private final ArrayList<_3AddressCode> codeBlock;
+    private final ArrayList<AddressCodeBag> codeBlock;
     private int lastTempIndex;
     private int lastDataAddress;
     private static final int START_TEMP_MEMORY_ADDRESS = 500;
@@ -31,17 +31,17 @@ public class Memory {
     }
 
     public int saveMemory() {
-        codeBlock.add(new _3AddressCode());
+        codeBlock.add(new AddressCodeBag());
         return codeBlock.size() - 1;
     }
 
-    public void add3AddressCode(Operation op, Address opr1, Address opr2, Address opr3) {
-        codeBlock.add(new _3AddressCode(op, opr1, opr2, opr3));
+    public void addAddressCodeBag(Operation op, Address opr1, Address opr2, Address opr3) {
+        codeBlock.add(new AddressCodeBag(op, opr1, opr2, opr3));
     }
 
-    public void add3AddressCode(int i, Operation op, Address opr1, Address opr2, Address opr3) {
+    public void addAddressCodeBag(int i, Operation op, Address opr1, Address opr2, Address opr3) {
         codeBlock.remove(i);
-        codeBlock.add(i, new _3AddressCode(op, opr1, opr2, opr3));
+        codeBlock.add(i, new AddressCodeBag(op, opr1, opr2, opr3));
     }
 
 
@@ -57,17 +57,17 @@ public class Memory {
     }
 }
 
-class _3AddressCode {
+class AddressCodeBag {
     public Operation operation;
     public Address Operand1;
     public Address Operand2;
     public Address Operand3;
 
-    public _3AddressCode() {
+    public AddressCodeBag() {
 
     }
 
-    public _3AddressCode(Operation op, Address opr1, Address opr2, Address opr3) {
+    public AddressCodeBag(Operation op, Address opr1, Address opr2, Address opr3) {
         operation = op;
         Operand1 = opr1;
         Operand2 = opr2;

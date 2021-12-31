@@ -1,9 +1,10 @@
 package parser;
 
 import scanner.token.Token;
-import scanner.type.Type;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by mohammad hosein on 6/25/2015.

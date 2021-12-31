@@ -6,8 +6,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Token {
-    public Type type;
-    public String value;
+    public final Type type;
+    public final String value;
 
     public Token(Type type, String value) {
         this.type = type;

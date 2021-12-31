@@ -43,13 +43,13 @@ public class Rule {
             }
         }
     }
-    public NonTerminal LHS;
-    public ArrayList<GrammarSymbol> RHS;
+    public final NonTerminal LHS;
+    public final ArrayList<GrammarSymbol> RHS;
     public int semanticAction;
 }
 
 class GrammarSymbol{
-    public boolean isTerminal;
+    public final boolean isTerminal;
     public NonTerminal nonTerminal;
     public Token terminal;
     public GrammarSymbol(NonTerminal nonTerminal)

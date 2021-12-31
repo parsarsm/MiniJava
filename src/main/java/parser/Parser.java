@@ -18,7 +18,7 @@ public class Parser {
   private final ArrayList<Rule> rules;
   private final Stack<Integer> parsStack;
   private ParseTable parseTable;
-  private CodeGenerator cg;
+  private final CodeGenerator cg;
 
   public Parser() {
     parsStack = new Stack<>();

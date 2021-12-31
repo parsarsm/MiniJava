@@ -4,9 +4,9 @@ package generator;
  * Created by mohammad hosein on 6/28/2015.
  */
 public class Address {
-    public int num;
-    public TypeAddress Type;
-    public VarType varType;
+    public final int num;
+    public final TypeAddress Type;
+    public final VarType varType;
 
     public Address(int num, VarType varType, TypeAddress Type) {
         this.num = num;

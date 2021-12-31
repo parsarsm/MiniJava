@@ -10,8 +10,8 @@ import java.util.Map;
  * Created by mohammad hosein on 6/25/2015.
  */
 public class ParseTable {
-    private ArrayList<Map<Token,Action>> actionTable;
-    private ArrayList<Map<NonTerminal,Integer>> gotoTable;
+    private final ArrayList<Map<Token,Action>> actionTable;
+    private final ArrayList<Map<NonTerminal,Integer>> gotoTable;
     public ParseTable(String jsonTable) throws Exception {
         jsonTable = jsonTable.substring(2,jsonTable.length()-2);
         String[] Rows = jsonTable.split("\\],\\[");

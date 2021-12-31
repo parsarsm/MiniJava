@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SymbolTable {
-    private Map<String, Klass> klasses;
-    private Map<String, Address> keyWords;
-    private Memory mem;
+    private final Map<String, Klass> klasses;
+    private final Map<String, Address> keyWords;
+    private final Memory mem;
     private SymbolType lastType;
 
     public SymbolTable(Memory memory) {
@@ -117,8 +117,8 @@ public class SymbolTable {
 
 
     class Klass {
-        public Map<String, Symbol> Fields;
-        public Map<String, Method> Methodes;
+        public final Map<String, Symbol> Fields;
+        public final Map<String, Method> Methodes;
         public Klass superClass;
 
         public Klass() {
@@ -137,13 +137,13 @@ public class SymbolTable {
     }
 
     class Method {
-        public int codeAddress;
-        public Map<String, Symbol> parameters;
-        public Map<String, Symbol> localVariable;
+        public final int codeAddress;
+        public final Map<String, Symbol> parameters;
+        public final Map<String, Symbol> localVariable;
         private final ArrayList<String> orderedParameters;
-        public int callerAddress;
-        public int returnAddress;
-        public SymbolType returnType;
+        public final int callerAddress;
+        public final int returnAddress;
+        public final SymbolType returnType;
         private int index;
 
         public Method(int codeAddress, SymbolType returnType) {
